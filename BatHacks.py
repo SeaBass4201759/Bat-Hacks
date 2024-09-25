@@ -62,6 +62,6 @@ def daBrain():
       exit()
     
     else:
-      selection = input('\n4Welcome to BatHacks choose what you want to do: \n1.Encrpyt and decrypt in base64 \n2.port scanning\n3.Exit\nEnter choice: ')
+      selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Encrpyt and decrypt in base64 \n2.port scanning\n3.Exit\nEnter choice: ')
       
 daBrain()
