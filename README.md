@@ -3,7 +3,8 @@ Welcome to Bat-Hacks. This is a personal project of mine. I'm practicing my pyth
 
 What is currently on Bat-Hacks:
 1. base64 encryption and decryption
-2. nothing else, but I do plan on adding more
+2. working on bat-ography: my own cryptography key specific to Bat-Hacks. It's hardcoded rn because it's easy to decrypt, but that will most likley change in near future.
+3. nothing else, but I do plan on adding more
 
 So yeah, the code probably looks botched but I'm trying my best to make it look tidy. I also have no professional programming background so I am doing the best I can. 
 Enjoy, or don't idc lol >.<
