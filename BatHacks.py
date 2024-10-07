@@ -1,4 +1,5 @@
 import base64
+from scapy.all import *
 def intro():  
   print(r"""
     ._.                 _.____.
@@ -25,19 +26,25 @@ def intro():
                                                                                       ▀                      """) 
 #base64 encryption function
 def base64_encryption():
-  encypt_This_Bitch = input('\nEnter what you want to encrypt in Base64: ')
-  encode64 = base64.b64encode(encypt_This_Bitch.encode("utf-8"))
-  messge = print(f"\nEncrypted message: {encode64}") 
+  encypt_This_Message = input('\nEnter what you want to encrypt in Base64: ')
+  encode64 = base64.b64encode(encypt_This_Message.encode("utf-8"))
+  messge = print(f"\nEncrypted message: {encode64}")
 #base64 decrytpin function 
 def base64_decryption():
-  decrypt_This_Bitch = input('\nEnter what you want to decrypt in Base64: ')
-  decode64 = base64.b64decode(decrypt_This_Bitch.encode("ascii"))
+  decrypt_This_Message = input('\nEnter what you want to decrypt in Base64: ')
+  decode64 = base64.b64decode(decrypt_This_Message.encode("ascii"))
   print(f"\nDecrypted message: {decode64}")
-#port scanning function
-def da_portscanner():
-  print("\nStill in the works.")
+def packet_sniffer():
+  num = int(input("\nEnter how many packets you want to sniff: "))
+  packet = sniff(count=num)
+  packet.show()
+def ACKscan():
+  destination = input('\nEnter the domain name: ')
+  ans, unans = sr(IP(dst=destination)/TCP(dport=[80,666],flags="A"))
+  print(f"Ans: {ans.show()}")
+  print(f"Unans: {unans.show()}")
 def bat_encrypt():
-  secret_bat_message = input("Enter what you want to encrypt: ")
+  secret_bat_message = input("\nEnter what you want to encrypt: ")
   daList = []
   for char in secret_bat_message:
     dVal = [ord(char)]
@@ -49,34 +56,39 @@ def bat_encrypt():
 intro()
 def daBrain():
   #bat hacks options
-  selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.port scanning\n3.Exit\nEnter choice: ')
-  #loop
+  selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.Network Stuff\n3.Exit\nEnter choice: ')
   while selection == '1' or '2' or '3': 
     #Cryptography
     if selection == '1':
-      cryp_choice = input("\nWelcome to the cryptography section. What do you want to use?\n1.Base64\n2.Bat-ography\nEnter choice: ")
+      cryp_choice = input("\nWelcome to the cryptography section. What do you want to use?\n1. Base64\n2.Bat-ography\nEnter choice: ")
+      #base64
       if cryp_choice == '1':
         en_decryp = input("\nWhat would you like to do?\n1. Encryption \n2. Decryption\nEnter choice: ")
         if en_decryp == '1':
           base64_encryption()
-          selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.port scanning\n3.Exit\nEnter choice: ')
+          selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.Network Stuff\n3.Exit\nEnter choice: ')
         elif en_decryp == '2':
           base64_decryption()
-          selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.port scanning\n3.Exit\nEnter choice: ')
-      #bat-ography
-      elif cryp_choice == '2':
+          selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.Network Stuff\n3.Exit\nEnter choice: ')
+      #batcryption
+      elif cryp_choice =='2':
         bat_encrypt()
-        selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.port scanning\n3.Exit\nEnter choice: ')  
+        selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.Network Stuff\n3.Exit\nEnter choice: ')
       else:
-        cryp_choice = input("\nWelcome to the cryptography section. What do you want to use?\n1.Base64\n2.Bat-ography\nEnter choice: ")
-    #Port scanning 
+        selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.Network Stuff\n3.Exit\nEnter choice: ')
+    #Network Stuff 
     elif selection == '2':
-      da_portscanner()
-      selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.port scanning\n3.Exit\nEnter choice: ')
-    #exit
+      network_choice = input("\nWhat kind of network stuff do you want to do?\n1.Packet Sniffing\n2.ACK scan\nEnter choice: ")
+      if network_choice == '1':
+        packet_sniffer()
+        selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.Network Stuff\n3.Exit\nEnter choice: ')
+      elif network_choice == '2':
+       ACKscan()
+       selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.Network Stuff\n3.Exit\nEnter choice: ') 
+      else:
+        selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.Network Stuff\n3.Exit\nEnter choice: ')
     elif selection == '3':
       exit()
-    #loop back
     else:
-      selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.port scanning\n3.Exit\nEnter choice: ')
+      selection = input('\nWelcome to BatHacks choose what you want to do: \n1.Cryptography \n2.Network Stuff\n3.Exit\nEnter choice: ')      
 daBrain()
