@@ -11,7 +11,7 @@ What is currently on Bat-Hacks:
 What is needed to run Bat-Hacks: 
 1. You will need to download Python (Youtube it if you don't know how to download it. Also don't be lame learn to code don't just be a script kiddie)
 2. You will need the scapy library. Scapy documentation: https://scapy.readthedocs.io/en/latest/installation.html
-   Everything you need to know about Scrapy is there.
+   Everything you need to know about Scapy is there.
 
 Want to help? Add a comment on what I should add or something idk, I want feedback on this project!
 
