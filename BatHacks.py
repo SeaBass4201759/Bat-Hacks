@@ -1,7 +1,7 @@
 import base64
 from scapy.all import *
 def intro():  
-  print(r"""
+  print("\033[38;5;124m" + r"""
     ._.                 _.____.
      ) \              /    .(
      )  |            .'   .(
@@ -23,7 +23,7 @@ def intro():
     ███    ██▄   ███    ███     ███            ███    ███     ███    ███ ███    █▄    ███▐██▄            ███ 
     ███    ███   ███    ███     ███            ███    ███     ███    ███ ███    ███   ███ ▀███▄    ▄█    ███ 
   ▄█████████▀    ███    █▀     ▄████▀          ███    █▀      ███    █▀  ████████▀    ███   ▀█▀  ▄████████▀  
-                                                                                      ▀                      """) 
+                                                                                      ▀                      """+ "\033[0m") 
 #base64 encryption function
 def base64_encryption():
   encypt_This_Message = input('\nEnter what you want to encrypt in Base64: ')
