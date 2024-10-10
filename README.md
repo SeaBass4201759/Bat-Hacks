@@ -6,7 +6,8 @@ What is currently on Bat-Hacks:
 2. working on bat-ography: my own cryptography key specific to Bat-Hacks. It's hardcoded rn because it's easy to decrypt, but that will most likley change in near future.
 3. ACK scanning
 4. Packet Sniffing
-5. nothing else, but I do plan on adding more
+5. Ping of Death (Educational use only)
+6. nothing else, but I do plan on adding more
 
 What is needed to run Bat-Hacks: 
 1. You will need to download Python (Youtube it if you don't know how to download it. Also don't be lame learn to code don't just be a script kiddie)
